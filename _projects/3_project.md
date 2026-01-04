@@ -1,81 +1,68 @@
 ---
 layout: page
-title: project 3 with very long name
-description: a project that redirects to another website
-img: assets/img/7.jpg
-redirect: https://unsplash.com
+title: Autonomous Pick-and-Place Robot System with Multi-Floor Navigation (Husky + UR3)
+description: Multi-floor navigation + manipulation with hybrid maps, AI vision, and AR markers for reliable button pressing
+img: assets/img/husky.jpg
 importance: 3
 category: work
+related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
+I developed an **autonomous multi-floor pick-and-place robot system** combining a **Clearpath Husky** mobile base and a **UR3** manipulator. The system focuses on reliable multi-floor navigation and accurate button press actions using hybrid mapping and perception. :contentReference[oaicite:14]{index=14}
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## What I Did
+- **Multi-floor autonomy (navigation + task execution)**
+  - Developed a multi-floor pick-and-place system using **Husky + UR3**. :contentReference[oaicite:15]{index=15}
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **Reliable interaction for real environments**
+  - Applied:
+    - **Hybrid maps**
+    - **AI vision**
+    - **AR markers**
+  - Goal:
+    - safe navigation
+    - accurate button pressing (e.g., elevator panels / door buttons) :contentReference[oaicite:16]{index=16}
+
+## Publication
+This project is associated with a journal submission (under revision). :contentReference[oaicite:17]{index=17}
+
+- **Development of Autonomous Pick-and-Place Robot System with Multi-Floor Navigation**  
+  Journal of Korea Robotics Society (Under revision) :contentReference[oaicite:18]{index=18}
+
+## My Role
+- System integration (navigation + perception + manipulation)
+- Implemented robust button-press pipeline using hybrid map + visual/marker cues :contentReference[oaicite:19]{index=19}
+
+## Tech Stack
+- Mobile Robotics: Husky navigation stack (multi-floor)
+- Manipulation: UR3 pick-and-place + button pressing
+- Perception: AI vision + AR marker cues
+- Mapping: hybrid map strategy for reliability :contentReference[oaicite:20]{index=20}
+
+## Media
+Replace the placeholders with:
+- system architecture diagram
+- elevator/button pressing demo frames
+- multi-floor navigation maps
+- grasp/pick-and-place sequences
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/husky-ur3/fig1.jpg" title="System overview (Husky + UR3)" class="img-fluid rounded z-depth-1" %}
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/husky-ur3/fig2.jpg" title="Multi-floor navigation (map + route)" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/husky-ur3/fig3.jpg" title="Button press perception & execution" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  Suggested visuals: multi-floor route planning, AR marker detection, and button-press execution snapshots.
+</div>
 
-{% endraw %}
+## Highlight
+A full-stack robotics system project demonstrating autonomy in real indoor spaces:
+- navigation reliability across floors
+- precise interaction with environment interfaces (buttons) :contentReference[oaicite:21]{index=21}

@@ -1,81 +1,63 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Auto-labeling & VQA Fine-tuning Pipeline for E2E Autonomous Driving
+description: Auto-labeling lanes/trajectories/actors from surround-view + LiDAR + HD maps and generating VQA fine-tuning JSONL
+img: assets/img/etri.jpg
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
+During my research internship, I developed an **auto-labeling tool** that extracts **lanes, trajectories, actors, and work-zones** from **surround-view cameras + LiDAR + HD maps**, and converts them into **VQA fine-tuning JSONL** for training vision-language models. :contentReference[oaicite:8]{index=8}
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## What I Built
+- **Auto-labeling tool (multi-modal)**
+  - Extracted structured supervision signals:
+    - lanes / trajectories / actors / work-zones
+  - Inputs:
+    - surround-view images
+    - LiDAR
+    - HD maps
+  - Outputs:
+    - VQA fine-tuning dataset in **JSONL** format :contentReference[oaicite:9]{index=9}
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **VLM-based scene understanding & decision outputs**
+  - Used **vision-fine-tuned InternVL 3.0** and **GPT-4o/5 (API)** to produce:
+    - scene-understanding
+    - action-decision style outputs
+  - Target: improving E2E autonomous driving reasoning quality :contentReference[oaicite:10]{index=10}
+
+## My Role
+- Built the end-to-end labeling-to-dataset pipeline
+- Implemented dataset generation flow and VQA JSONL formatting
+- Integrated VLM inference outputs into training-ready data generation :contentReference[oaicite:11]{index=11}
+
+## Tech Stack
+- Sensors / Mapping: Surround-view cameras, LiDAR, HD maps
+- Dataset: VQA fine-tuning JSONL
+- Models: InternVL 3.0 (vision fine-tuned), GPT-4o/5 (API) :contentReference[oaicite:12]{index=12}
+
+## Media
+Replace the images below with (1) dataset generation diagrams, (2) example labeled frames, (3) JSONL samples (blur sensitive info).
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/autolabel-vqa/fig1.jpg" title="Pipeline overview: sensors → auto-labels → JSONL" class="img-fluid rounded z-depth-1" %}
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/autolabel-vqa/fig2.jpg" title="Example frame: extracted lanes/actors" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/autolabel-vqa/fig3.jpg" title="Example: VQA JSONL sample visualization" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  Recommended visuals: label overlays, track/trajectory extraction, and JSONL schema screenshots.
+</div>
 
-{% endraw %}
+## Key Takeaway
+This project demonstrates my ability to:
+- build scalable data pipelines for autonomy,
+- bridge multi-modal perception into training data,
+- and connect VLM outputs to E2E driving model development. :contentReference[oaicite:13]{index=13}

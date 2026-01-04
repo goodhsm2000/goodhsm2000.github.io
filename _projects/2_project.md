@@ -1,81 +1,56 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Enhancing Diffusion-Based End-to-End Autonomous Driving with VLM
+description: VLM-guided dynamic anchor sampling + trajectory re-ranking for safer and more diverse planning
+img: assets/img/diffusion.jpg
 importance: 2
 category: work
-giscus_comments: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+## Overview
+I improved a diffusion-based end-to-end (E2E) autonomous driving pipeline by introducing **VLM-guided dynamic anchor sampling** for trajectory diversity and a **VLM-based Trajectory Scorer** for robust final trajectory selection. :contentReference[oaicite:2]{index=2}
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+## What I Did
+- **VLM-guided dynamic anchor sampling**
+  - Increased trajectory diversity and overall performance by dynamically sampling anchor trajectories with VLM guidance. :contentReference[oaicite:3]{index=3}
+  - Switched to a **lightweight YOLO-based sampler** for real-time operation while maintaining comparable results. :contentReference[oaicite:4]{index=4}
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+- **VLM-based Trajectory Scorer (re-ranking)**
+  - Built a trajectory re-ranking module that evaluates candidates using:
+    - **Centerline alignment**
+    - **Collision-avoidance metrics**
+  - Improved final path selection by scoring and selecting the best candidate trajectory. :contentReference[oaicite:5]{index=5}
+
+## My Role
+Owner of the core algorithmic improvements:
+- Designed the sampling + scoring architecture
+- Implemented real-time-friendly sampling (YOLO-based)
+- Integrated the re-ranking scorer into the E2E planning stack :contentReference[oaicite:6]{index=6}
+
+## Tech Stack
+- Deep Learning / E2E Driving: Diffusion-based planning pipeline
+- Vision & Sampling: YOLO-based lightweight sampler
+- Reasoning & Scoring: VLM-based candidate evaluation module :contentReference[oaicite:7]{index=7}
+
+## Media
+Below are placeholders. Replace them with your own screenshots (qualitative results, failure cases, ablations, etc.).
 
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/diffusiondrive/fig1.jpg" title="Dynamic anchor sampling overview" class="img-fluid rounded z-depth-1" %}
   </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/diffusiondrive/fig2.jpg" title="Trajectory re-ranking with VLM scorer" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/projects/diffusiondrive/fig3.jpg" title="Qualitative comparison (before/after)" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
+<div class="caption">
+  Example visuals: sampling diversity, collision-avoidance improvements, and selected trajectory comparisons.
+</div>
 
-{% endraw %}
+## Notes
+- This page is written to be readable to both research and engineering audiences.
+- If you want, I can also generate a concise “portfolio card” summary (2–3 lines) for the main projects page.

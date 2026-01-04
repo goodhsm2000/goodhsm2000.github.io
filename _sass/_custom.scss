@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Custom colors (goodhsm2000.github.io)
+   ========================================================================== */
+
+/* Light mode */
+:root {
+  --hsm-blue: #2563eb; /* blue */
+  --hsm-sky:  #38bdf8; /* sky blue */
+
+  /* Change the theme accent (was purple) -> BLUE */
+  --global-theme-color: var(--hsm-blue);
+}
+
+/* Dark mode */
+html[data-theme="dark"],
+body[data-theme="dark"],
+body.dark-mode {
+  --hsm-blue: #60a5fa; /* lighter blue */
+  --hsm-sky:  #7dd3fc; /* lighter sky */
+
+  /* Keep accent blue in dark mode too */
+  --global-theme-color: var(--hsm-blue);
+}
+
+/* ==========================================================================
+   A) Top navbar menu (About / blog / publications ...) -> SKY
+      Active menu (current page) -> BLUE
+   ========================================================================== */
+
+/* Default nav link color */
+.navbar .navbar-nav .nav-link,
+.navbar .navbar-nav .nav-link:visited {
+  color: var(--hsm-sky) !important;
+}
+
+/* Hover/focus */
+.navbar .navbar-nav .nav-link:hover,
+.navbar .navbar-nav .nav-link:focus {
+  color: var(--hsm-sky) !important;
+  opacity: 0.9;
+}
+
+/* Active page (currently purple) -> BLUE */
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .show > .nav-link,
+.navbar .navbar-nav .active > .nav-link {
+  color: var(--hsm-blue) !important;
+  font-weight: 600;
+}
+
+/* Also override Bootstrap navbar variables (more robust) */
+.navbar {
+  --bs-navbar-color: var(--hsm-sky);
+  --bs-navbar-hover-color: var(--hsm-sky);
+  --bs-navbar-active-color: var(--hsm-blue);
+}
+
+/* ==========================================================================
+   B) About page big title "Seongmin Hong" -> BLUE
+      (Only on layout: about)
+   ========================================================================== */
+
+body.about .post-title,
+body.about h1.post-title,
+body.about h1 {
+  color: var(--hsm-blue) !important;
+}
+
+/* ==========================================================================
+   C) (Optional) CV/Resume section list (basics/work/education/...) -> SKY
+      (kept from your previous request)
+   ========================================================================== */
+
+#cv a.nav-link,
+.cv a.nav-link,
+#cv-toc a.nav-link,
+#cv a.nav-link:visited,
+.cv a.nav-link:visited,
+#cv-toc a.nav-link:visited {
+  color: var(--hsm-sky) !important;
+}
+
+#cv a.nav-link.active,
+.cv a.nav-link.active,
+#cv-toc a.nav-link.active {
+  color: var(--hsm-blue) !important;
+  font-weight: 600;
+}
